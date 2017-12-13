@@ -12,11 +12,13 @@ body {
 }
 
 tr {
+	width: 100%;
 	background-color: white;
-	border-bottom: 2px solid rgba(255,255,255, 0.3);
 	margin: 50px;
     padding: 50px;
 	text-align: left
+	border: none;
+	border-radius: 5px;
 }
 
 input {
@@ -28,10 +30,24 @@ input {
 }
 
 button {
-	background: red;
-	color: white;
+  color: white;
 	border: none;
 	border-radius: 3px;
+}
+
+#postButton button {
+	background: green;
+  font-size: 16px;
+  margin: 15px;
+  padding: 10px;
+	}
+
+#output button {
+  background: red;
+  text-align: center;
+  font-size: 16px;
+  margin: 0 0 0 10px;
+  padding: 5px;
 }
 
 #container {
@@ -71,6 +87,5 @@ button {
 /*
 To-do: 13Dec2017
 - Adjust lateral positioning of input field
-- Style post button separately from the delete buttons for each posts.
 - Apply css after initial rendering? Any posts added afterward will not receive the width correction.
 */
