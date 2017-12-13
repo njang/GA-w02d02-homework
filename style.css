@@ -5,18 +5,19 @@
 body {
 	font-family: sans-serif;
 	text-align: center;
-	background: url('https://vignette.wikia.nocookie.net/starwars/images/6/6d/Theed_spaceport.jpg');
+	/*background: url('https://vignette.wikia.nocookie.net/starwars/images/6/6d/Theed_spaceport.jpg');*/
+	background: url('https://images.unsplash.com/photo-1512699057394-81542d1afef2?auto=format&fit=crop&w=1950&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D');
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: cover;
 }
 
-tr {
+td {
 	width: 100%;
 	background-color: white;
-	margin: 50px;
-    padding: 50px;
-	text-align: left
+	margin: 20px;
+    padding: 10px;
+	text-align: left;
 	border: none;
 	border-radius: 5px;
 }
@@ -27,32 +28,44 @@ input {
 	border-radius: 5px;
 	border: white;
 	padding: 0 15px;
+	position: relative;
+	margin: 0 auto;
 }
 
 button {
-  color: white;
+  	color: white;
 	border: none;
 	border-radius: 3px;
 }
 
+h1 {
+	color: lightgrey;
+	font-size: 48px;
+	text-transform: uppercase;
+}
+
 #postButton button {
 	background: green;
-  font-size: 16px;
-  margin: 15px;
-  padding: 10px;
-	}
+	font-size: 16px;
+	margin: 15px;
+	padding: 10px;
+	text-align: right;
+}
 
 #output button {
-  background: red;
+  background: black;
   text-align: center;
   font-size: 16px;
   margin: 0 0 0 10px;
   padding: 5px;
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
 }
 
 #container {
 	width: 650px;
-	height: 350px;
+	height: 450px;
 	background: inherit;
 	position: absolute;
 	overflow: hidden;
@@ -65,7 +78,7 @@ button {
 
 #container:before {
 	width: 700px;
-	height: 400px;
+	height: 500px;
 	content: "";
 	position: absolute;
 	top: -25px;
@@ -78,10 +91,32 @@ button {
 }
 
 #content {
-	position: absolute;
+	position: relative;
 	width: 650px;
-	height: 350px;
-	padding: 0px 25px;
+	height: 450px;
+	margin: 0px 25px;
+}
+
+#footer {
+	/*text-transform: uppercase;*/
+	padding: 0 20px;
+	background-color: #0D2C40;
+	color: white;
+	font-size: 14px;
+	letter-spacing: .08em;
+	font-weight: 500;
+	position: absolute;
+    bottom: 0px;
+    margin 0 auto;
+}
+
+#footer:after {
+	visibility: hidden;
+	display: block;
+	content: " ";
+	clear: both;
+	height: 0;
+	font-size: 0;
 }
 
 /*

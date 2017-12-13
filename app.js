@@ -37,22 +37,25 @@ const posts = [
 // 
 const initialPosts = () => {
 	for (let i = 0; i < posts.length; i++) {
-		let rowElement = document.createElement('tr');
-		let displayElement = document.createElement('td');
-		let deleteElement = document.createElement('button');
-		displayElement.textContent = posts[i];
-		deleteElement.setAttribute('onclick', 'deletePost('+ i+')');
-		deleteElement.textContent = 'X';
-		rowElement.appendChild(displayElement);
-		rowElement.appendChild(deleteElement);
-		document.getElementById('output').appendChild(rowElement);
+		addPosts(i);
+		// let rowElement = document.createElement('tr');
+		// let displayElement = document.createElement('td');
+		// let deleteElement = document.createElement('button');
+		// displayElement.textContent = posts[i];
+		// deleteElement.setAttribute('onclick', 'deletePost('+ i+')');
+		// deleteElement.textContent = 'X';
+		// rowElement.appendChild(displayElement);
+		// rowElement.appendChild(deleteElement);
+		// document.getElementById('output').appendChild(rowElement);
 	}	
 };
 
 document.getElementById("postButton").addEventListener("click", (event) => {
   let newPost = document.getElementById("inputText").value;
   posts.push(newPost);
-  updatePosts();
+  addPosts(posts.length - 1);
+  // updatePosts(posts.length - 1);
+  document.getElementById("inputText").value = null;
 });
 
 const postInput = () => {
@@ -61,15 +64,29 @@ const postInput = () => {
 
 const updatePosts = () => {
 	let m = posts.length - 1;
+	addPosts(m);
+	// let m = posts.length - 1;
+	// let rowElement = document.createElement('tr');
+	// let displayElement = document.createElement('td');
+	// let deleteElement = document.createElement('button');
+	// displayElement.textContent = posts[m];
+	// deleteElement.setAttribute('onclick', 'deletePost('+ m +')');
+	// deleteElement.textContent = 'X';
+	// rowElement.appendChild(displayElement);
+	// rowElement.appendChild(deleteElement);
+	// document.getElementById('output').appendChild(rowElement);
+}
+
+const addPosts = (index) => {
 	let rowElement = document.createElement('tr');
 	let displayElement = document.createElement('td');
 	let deleteElement = document.createElement('button');
-	displayElement.textContent = posts[m];
-	deleteElement.setAttribute('onclick', 'deletePost('+ m +')');
+	displayElement.textContent = posts[index];
+	deleteElement.setAttribute('onclick', 'deletePost('+ index +')');
 	deleteElement.textContent = 'X';
 	rowElement.appendChild(displayElement);
 	rowElement.appendChild(deleteElement);
-	document.getElementById('output').appendChild(rowElement);
+	document.getElementById('output').appendChild(rowElement);	
 }
 
 createInput();
@@ -78,6 +95,5 @@ initialPosts();
 createOutput();
 
 // To-do: 13Dec2017
-// Clear the input field after post.
 // Use localStorage.
 // Add more comments.
