@@ -27,14 +27,15 @@ const createOutput = () => {
 	document.getElementById('output').appendChild(outputElement);	
 }
 
-// an array of archived posts to show in the beginning.
+// an array of initial posts to display at the beginning.
 const posts = [
 	"Skate ipsum dolor sit amet, yeah poseur casper nosebone downhill wax coping.",
 	"Tom Knox salad grind Saran Wrap ollie hole Christ air dude shoveit smith grind.",
 	"Hang up cess slide air axle set rail slide boardslide manual."
 ];
 
-const populatePosts = () => {
+// 
+const initialPosts = () => {
 	for (let i = 0; i < posts.length; i++) {
 		let rowElement = document.createElement('tr');
 		let displayElement = document.createElement('td');
@@ -51,9 +52,6 @@ const populatePosts = () => {
 document.getElementById("postButton").addEventListener("click", (event) => {
   let newPost = document.getElementById("inputText").value;
   posts.push(newPost);
-  // alert(post);
-  // num = (num + 1).toString();
-  // localStorage.setItem(num, post);
   updatePosts();
 });
 
@@ -76,5 +74,10 @@ const updatePosts = () => {
 
 createInput();
 createPostButton();
-populatePosts();
+initialPosts();
 createOutput();
+
+// To-do: 13Dec2017
+// Clear the input field after post.
+// Use localStorage.
+// Add more comments.
